@@ -1,0 +1,23 @@
+name: Main
+on: push
+
+jobs:
+  bug:
+    name: 'Bug with success()'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: A step which succeeds
+      run: exit 0
+
+    - name: A step which fails
+      run: exit 1
+
+    - name: A step which runs unconditionally and succeeds
+      if: always()
+      run: exit 0
+
+    - name: A step which should run if the last step succeeds
+      if: success()
+      run: exit 0
