@@ -19,8 +19,11 @@ jobs:
     - name: Scan Python location
       run: find $pythonLocation
 
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
     - name: Invoke CMake to find Python
-      run: cmake --trace-expand -P findpy.cmake
+      run: cmake --trace-expand -P findpy.cmake -DPython_ROOT=$pythonLocation
 
   bug:
     name: 'Bug with success()'
