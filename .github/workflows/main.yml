@@ -14,7 +14,7 @@ jobs:
         python-version: 2.7
 
     - name: Dump sysconfig
-      shell: python
+      shell: /opt/hostedtoolcache/Python/2.7.16/x64/python
       run: |
         import sysconfig
         print(sysconfig.get_config_vars())
