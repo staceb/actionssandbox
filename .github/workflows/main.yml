@@ -16,6 +16,9 @@ jobs:
     - name: Dump sysconfig
       run: python -c 'import sysconfig; print(sysconfig.get_config_vars())'
 
+    - name: Scan Python location
+      run: find $pythonLocation
+
   bug:
     name: 'Bug with success()'
 
