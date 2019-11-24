@@ -19,6 +19,9 @@ jobs:
     - name: Scan Python location
       run: find $pythonLocation
 
+    - name: Invoke CMake to find Python
+      run: cmake --trace-expand --find-package -DNAME=Python -DCOMPILER_ID=GNU -DLANGUAGE=C -DMODE=EXIST -DPython_ROOT=$pythonLocation
+
   bug:
     name: 'Bug with success()'
 
