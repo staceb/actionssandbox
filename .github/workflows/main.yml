@@ -2,6 +2,23 @@ name: Main
 on: push
 
 jobs:
+  python:
+    name: 'Explore Python environment'
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - name: Set up Python 2.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 2.7
+
+    - name: Dump sysconfig
+      shell: python
+      run: |
+        import sysconfig
+        print(sysconfig.get_config_vars())
+
   bug:
     name: 'Bug with success()'
 
