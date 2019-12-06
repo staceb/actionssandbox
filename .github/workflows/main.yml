@@ -35,6 +35,7 @@ jobs:
       run: exit 0
 
     - name: A step which fails
+      continue-on-error: true
       run: exit 1
 
     - name: A step which runs unconditionally and succeeds
